@@ -42,7 +42,7 @@ function AdminDashboard() {
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <div className="logo text-white text-center py-3 fs-4">Admin</div>
+        <div className="logo text-white text-center py-3 fs-4">Admin Panel</div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["dashboard"]}>
           <Menu.Item key="dashboard" icon={<HomeOutlined />}>
             <NavLink to="/admin">Dashboard</NavLink>

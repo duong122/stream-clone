@@ -1,19 +1,24 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginUser } from "../services/userService"; 
-import "bootstrap/dist/css/bootstrap.min.css"; 
-
+import { loginUser } from "../services/userService";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("Đăng nhập với:", email, password);
-    loginUser({ email, password })
-    navigate("/"); 
+    try {
+      const { token, user } = await loginUser({ username, password });
+      localStorage.setItem("token", token);
+      localStorage.setItem("user", JSON.stringify(user));
+      navigate("/"); // chuyển về trang chủ
+    } catch (err) {
+      alert("Đăng nhập thất bại");
+      console.error(err);
+    }
   };
 
   return (
@@ -24,17 +29,16 @@ export default function Login() {
       }}
     >
       <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
-
       <div className="position-relative bg-black p-5 rounded" style={{ maxWidth: "400px", width: "100%" }}>
         <h2 className="text-center mb-4">Đăng Nhập</h2>
         <form onSubmit={handleLogin}>
           <div className="mb-3">
             <input
-              type="email"
+              type="text"
               className="form-control bg-secondary text-white"
-              placeholder="Email hoặc số điện thoại"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Tên đăng nhập"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>
@@ -51,7 +55,7 @@ export default function Login() {
           <button type="submit" className="btn btn-danger w-100">Đăng Nhập</button>
         </form>
         <p className="text-center mt-3">
-          Bạn mới tham gia? <a href="#" className="text-warning">Đăng ký ngay</a>
+          Bạn mới tham gia? <a href="/register" className="text-warning">Đăng ký ngay</a>
         </p>
       </div>
     </div>

@@ -121,8 +121,8 @@ const User = () => {
                             value={isAdmin}
                             onChange={(e) => setIsAdmin(e.target.value === "true")}
                         >
-                            <option value={false}>Không</option>
-                            <option value={true}>Có</option>
+                            <option value={false}>NO</option>
+                            <option value={true}>YES</option>
                         </select>
                     </div>
                 </div>

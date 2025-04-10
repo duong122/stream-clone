@@ -7,16 +7,6 @@ const PaymentMethod = () => {
   const [method, setMethod] = useState('vnpay');
   const [cardNumber, setCardNumber] = useState('');
 
-  const handleVNPay = async () => {
-    try {
-      // const paymentUrl = await createVNPayUrl();
-      // const redirectUrl = `/vnpay/redirect?paymentUrl=${encodeURIComponent(paymentUrl)}`;
-      // window.location.href = redirectUrl;
-    } catch (error) {
-      console.error('VNPay Error:', error);
-    }
-  };
-
   return (
     <div className="payment-methods">
       <h4>Chọn phương thức thanh toán</h4>

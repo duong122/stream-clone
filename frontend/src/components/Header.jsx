@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Search, Clock, Globe, Download, LogIn, ChevronDown } from "lucide-react";
+import { Search, Clock, Globe, Download, LogIn } from "lucide-react";
 import { getCategories } from "../services/categoryService";
 import { useNavigate } from 'react-router-dom';
 import MenuItem from "./MenuItem";
@@ -11,8 +11,8 @@ export default function Header() {
   const [categories, setCategories] = useState([]);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [user, setUser] = useState(null);
 
-  // Fetch danh sách category từ API
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -30,10 +30,23 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  console.log("Categories:", categories );
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    setUser(null);
+    navigate("/login");
+  };
 
   return (
-    <header className="fixed-top w-100 px-4 py-2 d-flex justify-content-between align-items-center bg-black">
+    <header className="fixed-top w-100 px-4 py-2 d-flex justify-content-between align-items-center bg-black ">
       {/* Logo và Navigation */}
       <div className="d-flex align-items-center gap-4">
         <div className="text-success fw-bold fs-3">Đại Việt</div>
@@ -62,7 +75,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-
 
       {/* Right section */}
       <div className="d-flex align-items-center gap-5 text-white">
@@ -93,14 +105,32 @@ export default function Header() {
             Khuyến mãi
           </span>
         </button>
-         {/* Modal VIP */}
+
         <VipModal open={isModalVisible} onClose={() => setIsModalVisible(false)} />
-        <button 
-          className="btn btn-outline-light d-flex align-items-center gap-3"
-          onClick={() => navigate('/login')}
-        >
-          <LogIn className="w-4 h-3" /> Đăng Nhập
-        </button>
+
+        {/* Nếu đã đăng nhập */}
+        {user ? (
+          <div className="d-flex align-items-center gap-2">
+            <img
+              src="https://i.imgur.com/0y8Ftya.png"
+              alt="avatar"
+              width="35"
+              height="35"
+              className="rounded-circle"
+            />
+            <span className="fw-bold">{user.username}</span>
+            <button className="btn btn-sm btn-outline-light ms-2" onClick={handleLogout}>
+              Đăng xuất
+            </button>
+          </div>
+        ) : (
+          <button 
+            className="btn btn-outline-light d-flex align-items-center gap-2"
+            onClick={() => navigate('/login')}
+          >
+            <LogIn className="w-4 h-3" /> Đăng Nhập
+          </button>
+        )}
       </div>
     </header>
   );

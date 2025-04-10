@@ -6,14 +6,27 @@ import PaymentMethod from './PaymentMethod';
 import PaymentService from '../../services/paymentService'; 
 
 const VipModal = ({ open, onClose }) => {
-    const handleVipPayment = async () => {
-        try {
-          const paymentUrl = await PaymentService.createPaymentUrl({});
-          window.location.href = paymentUrl; 
-        } catch (error) {
-          console.error('Lỗi khi tạo thanh toán VNPay:', error);
-        }
+
+  const handleVipPayment = async () => {
+    try {
+      const data = {
+        amount: 1990000,
+        bankCode: '',
+        language: 'vn'
+      };
+  
+      const response = await PaymentService.createPaymentUrl(data);
+  
+      if (response.data.url) {
+        window.location.href = response.data.url;
+      } else {
+        console.error('Không nhận được URL thanh toán');
+      }
+    } catch (error) {
+      console.error('Lỗi khi tạo thanh toán VNPay:', error.response?.data || error.message);
     }
+  };
+  
 
   return (
     <Modal

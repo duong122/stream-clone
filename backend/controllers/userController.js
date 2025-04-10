@@ -1,5 +1,6 @@
 const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
+require('dotenv').config();
 
 // Generate JWT
 const generateToken = (user) => {
@@ -12,7 +13,7 @@ const generateToken = (user) => {
 
 exports.register = async (req, res) => {
     try {
-        const { username, password, fullName, email } = req.body;``
+        const { username, password, fullName, email } = req.body;
 
         const existingUser = await User.findOne({ username });
         if (existingUser) {
@@ -25,6 +26,7 @@ exports.register = async (req, res) => {
         const token = generateToken(newUser);
         res.status(201).json({ user: newUser, token });
     } catch (error) {
+        console.error("LỖI ĐĂNG KÝ:", error);
         res.status(500).json({ message: "Đăng ký thất bại", error });
     }
 };

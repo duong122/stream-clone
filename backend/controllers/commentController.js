@@ -20,6 +20,7 @@ exports.createComment = async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 };
+
 // Get a single comment by ID
 exports.getCommentById = async (req, res) => {
     const { id } = req.params;
