@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const generateToken = (user) => {
     return jwt.sign(
         { id: user._id, username: user.username, isAdmin: user.isAdmin },
-        process.env.JWT_SECRET || "your_jwt_secret", // nên đưa vào .env
+        process.env.JWT_SECRET || "your_jwt_secret", 
         { expiresIn: "1d" }
     );
 };
@@ -94,3 +94,5 @@ exports.deleteUser = async (req, res) => {
         res.status(500).json({ message: "Lỗi xóa", error });
     }
 };
+
+

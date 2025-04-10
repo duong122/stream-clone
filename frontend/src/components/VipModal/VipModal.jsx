@@ -3,12 +3,12 @@ import React from 'react';
 import { Modal, Button, Radio, Input, Checkbox } from 'antd';
 import './VipModal.css';
 import PaymentMethod from './PaymentMethod';
-import { createVNPayUrl } from '../../services/paymentService'; 
+import PaymentService from '../../services/paymentService'; 
 
 const VipModal = ({ open, onClose }) => {
     const handleVipPayment = async () => {
         try {
-          const paymentUrl = await createVNPayUrl();
+          const paymentUrl = await PaymentService.createPaymentUrl({});
           window.location.href = paymentUrl; 
         } catch (error) {
           console.error('Lỗi khi tạo thanh toán VNPay:', error);

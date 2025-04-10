@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Radio, Input, Button } from 'antd';
 import { CreditCard, Wallet } from 'lucide-react';
-import { createVNPayUrl } from '../../services/paymentService';
+
 
 const PaymentMethod = () => {
   const [method, setMethod] = useState('vnpay');
@@ -9,9 +9,9 @@ const PaymentMethod = () => {
 
   const handleVNPay = async () => {
     try {
-      const paymentUrl = await createVNPayUrl();
-      const redirectUrl = `/vnpay/redirect?paymentUrl=${encodeURIComponent(paymentUrl)}`;
-      window.location.href = redirectUrl;
+      // const paymentUrl = await createVNPayUrl();
+      // const redirectUrl = `/vnpay/redirect?paymentUrl=${encodeURIComponent(paymentUrl)}`;
+      // window.location.href = redirectUrl;
     } catch (error) {
       console.error('VNPay Error:', error);
     }

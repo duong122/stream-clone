@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap
+import { loginUser } from "../services/userService"; 
+import "bootstrap/dist/css/bootstrap.min.css"; 
+
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -10,7 +12,8 @@ export default function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     console.log("Đăng nhập với:", email, password);
-    navigate("/"); // Chuyển về trang chủ sau khi đăng nhập
+    loginUser({ email, password })
+    navigate("/"); 
   };
 
   return (

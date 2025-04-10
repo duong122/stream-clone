@@ -81,7 +81,6 @@ function HomePage() {
         ))}
       </div>
       <ActorList/>
-
       <Footer/>
     </div>
   );
