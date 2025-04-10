@@ -1,0 +1,48 @@
+.category-slider {
+    padding: 0 20px;
+    margin-bottom: 100px;
+    /* Space below the component */
+}
+
+.category-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 40px;
+    /* Space above the title */
+    margin-bottom: 20px;
+}
+
+/* Ensure the slider container doesn't add extra spacing */
+.movie-slider {
+    margin: 0 -20px;
+    /* Offset the padding of the parent to align cards with the title */
+}
+
+/* Add spacing between slides (movie cards) */
+.movie-slider .slick-slide {
+    padding: 0 20px;
+    /* 20px on each side = 40px total gap between cards */
+}
+
+/* Style the navigation arrows */
+.slick-prev,
+.slick-next {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: white;
+}
+
+.slick-prev {
+    left: -50px;
+}
+
+.slick-next {
+    right: -50px;
+}

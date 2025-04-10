@@ -1,0 +1,39 @@
+[
+    {
+      "_id": "1",
+      "name": "Robert Downey Jr.",
+      "birthDate": "1965-04-04",
+      "nationality": "American"
+    },
+    {
+      "_id": "2",
+      "name": "Chris Evans",
+      "birthDate": "1981-06-13",
+      "nationality": "American"
+    },
+    {
+      "_id": "3",
+      "name": "Mark Ruffalo",
+      "birthDate": "1967-11-22",
+      "nationality": "American"
+    },
+    {
+      "_id": "4",
+      "name": "Leonardo DiCaprio",
+      "birthDate": "1974-11-11",
+      "nationality": "American"
+    },
+    {
+      "_id": "5",
+      "name": "Joseph Gordon-Levitt",
+      "birthDate": "1981-02-17",
+      "nationality": "American"
+    },
+    {
+      "_id": "6",
+      "name": "Ellen Page",
+      "birthDate": "1987-02-21",
+      "nationality": "Canadian"
+    }
+]
+  

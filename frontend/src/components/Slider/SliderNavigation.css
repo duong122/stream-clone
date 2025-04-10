@@ -1,0 +1,11 @@
+.slider-navigation {
+    transform: translateY(-50%);
+  }
+  
+  .slider-navigation .btn {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .slider-navigation .btn:disabled {
+    opacity: 0.5;
+  }

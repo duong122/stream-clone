@@ -1,0 +1,32 @@
+.footer-container {
+    background-color: #0c0c0c;
+    color: white;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 0 20px 20px 0;
+  }
+  
+  .footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: bold;
+  }
+  
+  .footer-column p {
+    font-size: 14px;
+    color: #b0b0b0;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  
+  .footer-column p:hover {
+    color: #ffffff;
+  }
+  

@@ -1,0 +1,13 @@
+[
+    {
+      "_id": "1",
+      "name": "Action",
+      "description": "Movies with intense action scenes and stunts."
+    },
+    {
+      "_id": "2",
+      "name": "Sci-Fi",
+      "description": "Movies based on futuristic technology and science."
+    }
+  ]
+  

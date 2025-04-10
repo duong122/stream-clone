@@ -1,0 +1,18 @@
+[
+    {
+      "_id": "1",
+      "movie": "1",
+      "user": "1",
+      "content": "This movie was amazing! The action scenes were epic and the plot was fantastic!",
+      "createdAt": "2019-04-27T12:00:00Z"
+    },
+    {
+      "_id": "2",
+      "movie": "2",
+      "user": "2",
+      "content": "A mind-bending thriller. The concept of dreams within dreams was incredible.",
+      "createdAt": "2010-07-17T12:00:00Z"
+    }
+  ]
+  
+  

@@ -1,0 +1,28 @@
+@startuml
+actor User
+participant Client
+participant Server
+participant AuthService
+participant MongoDB
+participant JWT
+
+User -> Client : Nhập email & mật khẩu
+Client -> Server : POST /login (email, password)
+Server -> AuthService : login(email, password)
+AuthService -> MongoDB : Tìm user theo email
+MongoDB --> AuthService : Trả về thông tin user
+
+AuthService -> AuthService : So sánh mật khẩu
+alt Nếu hợp lệ
+  AuthService -> JWT : sign(payload, secret)
+  JWT --> AuthService : accessToken
+  AuthService --> Server : Trả accessToken
+  Server --> Client : 200 OK + Token
+  Client -> Client : Lưu token
+  Client -> User : Chuyển hướng đến trang chủ
+else Nếu sai thông tin
+  AuthService --> Server : Trả lỗi
+  Server --> Client : 401 Unauthorized
+  Client -> User : Hiển thị lỗi
+end
+@enduml

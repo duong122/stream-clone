@@ -1,0 +1,17 @@
+[
+    {
+      "_id": "1",
+      "user": "1",
+      "amount": 100,
+      "paymentDate": "2025-04-01T10:00:00Z",
+      "paymentStatus": "Completed"
+    },
+    {
+      "_id": "2",
+      "user": "2",
+      "amount": 150,
+      "paymentDate": "2025-04-02T14:00:00Z",
+      "paymentStatus": "Pending"
+    }
+  ]
+  

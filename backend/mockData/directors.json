@@ -1,0 +1,18 @@
+[
+    {
+      "_id": "1",
+      "name": "Christopher Nolan",
+      "birthDate": "1970-07-30T00:00:00Z",
+      "nationality": "British-American",
+      "movies": ["1", "2"]
+    },
+    {
+      "_id": "2",
+      "name": "Quentin Tarantino",
+      "birthDate": "1963-03-27T00:00:00Z",
+      "nationality": "American",
+      "movies": ["3", "4"]
+    }
+  ]
+  
+  

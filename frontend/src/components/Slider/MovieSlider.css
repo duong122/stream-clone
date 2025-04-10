@@ -1,0 +1,12 @@
+.container-fluid {
+    height: 600px; /* Ensure the slider has a height */
+    margin-top: 40px;
+  }
+  
+  .slick-dots {
+    bottom: 20px;
+  }
+  
+  .slick-dots li button:before {
+    color: white;
+  }

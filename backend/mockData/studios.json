@@ -1,0 +1,15 @@
+[
+    {
+      "_id": "1",
+      "name": "Studio A",
+      "address": "123 Main Street, City, Country",
+      "contactInfo": "+1234567890"
+    },
+    {
+      "_id": "2",
+      "name": "Studio B",
+      "address": "456 Another Ave, City, Country",
+      "contactInfo": "+0987654321"
+    }
+  ]
+  

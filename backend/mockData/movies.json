@@ -1,0 +1,29 @@
+[
+    {
+      "_id": "1",
+      "title": "Avengers: Endgame",
+      "description": "The Avengers assemble to reverse the damage caused by Thanos.",
+      "releaseDate": "2019-04-26T00:00:00Z",
+      "duration": 181,
+      "category": "1",  
+      "studio": "1",    
+      "director": "1", 
+      "actors": ["1", "2", "3"], 
+      "ratings": 8.5,
+      "createdAt": "2019-04-01T00:00:00Z"
+    },
+    {
+      "_id": "2",
+      "title": "Inception",
+      "description": "A skilled thief is given a chance to have his criminal record erased in exchange for implanting an idea into a CEO's mind.",
+      "releaseDate": "2010-07-16T00:00:00Z",
+      "duration": 148,
+      "category": "2",  
+      "studio": "2",   
+      "director": "2", 
+      "actors": ["4", "5", "6"], 
+      "ratings": 9.0,
+      "createdAt": "2010-07-01T00:00:00Z"
+    }
+  ]
+  
